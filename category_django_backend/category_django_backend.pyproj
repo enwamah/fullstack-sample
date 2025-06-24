@@ -25,6 +25,7 @@
     <Compile Include="category_api\models.py" />
     <Compile Include="category_api\serializers.py" />
     <Compile Include="category_api\tests.py" />
+    <Compile Include="category_api\urls.py" />
     <Compile Include="category_api\views.py" />
     <Compile Include="category_api\__init__.py" />
     <Compile Include="category_django_backend\asgi.py" />
