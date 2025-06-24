@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ProductsWebApi.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProductsWebApi.DTOs.Product
 {
@@ -14,6 +15,7 @@ namespace ProductsWebApi.DTOs.Product
         [Range(0.01, double.MaxValue)]
         public decimal Price { get; init; }
         [Required]
+        [ValidateCategoryId]
         public int CategoryId { get; init; }
 
         public static implicit operator Models.Product(ProductPost product)
