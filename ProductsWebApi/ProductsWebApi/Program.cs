@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using ProductsWebApi.Data;
+using ProductsWebApi.Helpers;
 
 namespace ProductsWebApi
 {
@@ -25,6 +26,12 @@ namespace ProductsWebApi
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+            }
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                DatabaseSetup.AddedDummyData(db);
             }
 
             app.UseHttpsRedirection();
