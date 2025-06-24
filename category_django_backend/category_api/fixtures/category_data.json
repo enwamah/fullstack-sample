@@ -1,0 +1,18 @@
+[
+  {
+    "model": "category_api.Category",
+    "pk": 4,
+    "fields": {
+      "name": "Clothing",
+      "description": "Men's and women's fashion"
+    }
+  },
+  {
+    "model": "category_api.Category",
+    "pk": 5,
+    "fields": {
+      "name": "Food",
+      "description": "Groceries, snacks, and beverages"
+    }
+  }
+]
