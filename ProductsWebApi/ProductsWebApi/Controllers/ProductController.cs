@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ProductsWebApi.Data;
 using ProductsWebApi.DTOs.Product;
-using ProductsWebApi.Models;
+using ProductsWebApi.Services;
 
 namespace ProductsWebApi.Controllers
 {
@@ -10,31 +8,39 @@ namespace ProductsWebApi.Controllers
     [Route("api/products")]
     public class ProductController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ProductService _productService;
 
-        private readonly ILogger<ProductController> _logger;
-
-        public ProductController(ApplicationDbContext context)
+        public ProductController(ProductService productService)
         {
-            _context = context;
+            _productService = productService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetProductsAsync()
         {
-            List<ProductGet> products = await _context.Products.Include(p => p.Category).Select(p => (ProductGet)p).ToListAsync();
-
-            return Ok(products);
+            try
+            {
+                var products = await _productService.GetAllAsync();
+                return Ok(products);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateProductsAsync(ProductPost request)
         {
-            Product product = request;
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-
-            return Ok((ProductGet)product);
+            try
+            {
+                var result = await _productService.CreateAsync(request);
+                return Created("/api/products", result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
     }
 }
