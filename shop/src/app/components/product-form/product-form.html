@@ -1,1 +1,41 @@
-<p>product-form works!</p>
+<h2>Product Form</h2>
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label>Name:</label>
+    <input formControlName="name" />
+    <div *ngIf="productForm.get('name')?.touched && productForm.get('name')?.errors as errors" class="validation-error-text">
+      <div *ngIf="errors['required']">Name is required.</div>
+    </div>
+  </div>
+
+  <div>
+    <label>Description:</label>
+    <input formControlName="description" />
+    <div *ngIf="productForm.get('description')?.touched && productForm.get('description')?.errors as errors" class="validation-error-text">
+      <div *ngIf="errors['required']">Description is required.</div>
+    </div>
+  </div>
+
+  <div>
+    <label>Price:</label>
+    <input type="number" formControlName="price" min="0.01" />
+    <div *ngIf="productForm.get('price')?.touched && productForm.get('price')?.errors as errors" class="validation-error-text">
+      <div *ngIf="errors['required']">Price is required.</div>
+      <div *ngIf="errors['min']">Price must be at least 0.01.</div>
+    </div>
+  </div>
+
+  <div>
+    <label>Category:</label>
+    <select formControlName="categoryId">
+      <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
+    </select>
+    <div *ngIf="productForm.get('categoryId')?.touched && productForm.get('categoryId')?.errors as errors" class="validation-error-text">
+      <div *ngIf="errors['required']">Category is required.</div>
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
