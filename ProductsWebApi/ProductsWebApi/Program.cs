@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProductsWebApi.Data;
 using ProductsWebApi.Helpers;
+using ProductsWebApi.Services;
 
 namespace ProductsWebApi
 {
@@ -18,6 +19,7 @@ namespace ProductsWebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlite("Data Source=ShopDB.db"); });
+            builder.Services.AddScoped<ProductService>();
 
             var app = builder.Build();
 
