@@ -725,3 +725,5 @@ FodyWeavers.xsd
 
 # Db Files
 ShopDB.db
+ShopDB.db-shm
+ShopDB.db-wal
