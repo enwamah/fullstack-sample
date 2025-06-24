@@ -7,6 +7,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsWebApi", "ProductsW
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "category_django_backend", "..\category_django_backend\category_django_backend.pyproj", "{DC6A47BB-7F55-4C59-9B93-D63FC3BD9B2E}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "shop", "..\shop\", "{7B723D1D-1F5F-46F9-990B-93D8479E5633}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60625"
+		Debug.AspNetCompiler.PhysicalPath = "..\shop\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60625\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60625"
+		Release.AspNetCompiler.PhysicalPath = "..\shop\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60625\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "60625"
+		SlnRelativePath = "..\shop\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +40,10 @@ Global
 		{6D3A789C-DD97-4D93-BF17-1E75D5714ECD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC6A47BB-7F55-4C59-9B93-D63FC3BD9B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC6A47BB-7F55-4C59-9B93-D63FC3BD9B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B723D1D-1F5F-46F9-990B-93D8479E5633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B723D1D-1F5F-46F9-990B-93D8479E5633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B723D1D-1F5F-46F9-990B-93D8479E5633}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B723D1D-1F5F-46F9-990B-93D8479E5633}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

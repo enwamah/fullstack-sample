@@ -8,6 +8,8 @@ dist/
 tmp/
 app/**/*.js
 app/**/*.js.map
+/out-tsc
+/bazel-out
 
 # dependencies
 node_modules/
@@ -25,6 +27,8 @@ npm-debug.log
 testem.log
 typings/
 .angular/
+yarn-error.log
+/.angular/cache
 
 # e2e
 e2e/*.js
@@ -32,6 +36,7 @@ e2e/*.map
 
 # System Files
 .DS_Store/
+Thumbs.db
 
 ### ASPNETCore ###
 ## Ignore Visual Studio temporary files, build results, and
