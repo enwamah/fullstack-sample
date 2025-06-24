@@ -5,3 +5,5 @@ export interface Product {
   price: number;
   categoryId: number;
 }
+
+export type CreateProductDto = Omit<Product, 'id'>;
