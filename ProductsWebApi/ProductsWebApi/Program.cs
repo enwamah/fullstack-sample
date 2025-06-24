@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using ProductsWebApi.Data;
+
 namespace ProductsWebApi
 {
     public class Program
@@ -13,6 +16,7 @@ namespace ProductsWebApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlite("Data Source=ShopDB.db"); });
 
             var app = builder.Build();
 
